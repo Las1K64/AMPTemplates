@@ -10,20 +10,20 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "ReHLDS Download",
+        "UpdateStageName": "KTP-ReHLDS Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "GithubRelease",
-        "UpdateSourceArgs": "dreamstalker/rehlds",
+        "UpdateSourceArgs": "afraznein/KTP-ReHLDS",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
-        "UpdateSourceConditionSetting": "InstallreHLDS",
+        "UpdateSourceConditionSetting": "InstallreKTP-HLDS",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "ReHLDS Files Copy",
+        "UpdateStageName": "KTP-ReHLDS Files Copy",
         "UpdateSourcePlatform": "Windows",
         "UpdateSource": "Executable",
         "UpdateSourceData": "cmd.exe",
@@ -33,12 +33,12 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "ReHLDS Files Copy",
+        "UpdateStageName": "KTP-ReHLDS Files Copy",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c \"\\cp -rf ./day-of-defeat/90/bin/linux32/* ./day-of-defeat/90/ && rm -rf ./day-of-defeat/90/bin/ ./day-of-defeat/90/hlsdk/\"",
-        "UpdateSourceConditionSetting": "InstallreHLDS",
+        "UpdateSourceConditionSetting": "InstallreKTP-HLDS",
         "UpdateSourceConditionValue": "true",
         "SkipOnFailure": false
     },
@@ -46,7 +46,7 @@
         "UpdateStageName": "Server.cfg Template File Download",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/day-of-defeatserver.cfg",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Las1K64/AMPTemplates/main/day-of-defeatserver.cfg",
         "UpdateSourceArgs": "AMP_server.cfg",
         "UpdateSourceTarget": "{{$FullRootDir}}",
         "OverwriteExistingFiles": true,
@@ -75,6 +75,30 @@
         "DeleteAfterExtract": true,
         "UpdateSourceConditionSetting": "InstallMetamod",
         "UpdateSourceConditionValue": "metamod-r"
+    },
+    {
+        "UpdateStageName": "Metamod-P Fork Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "APGRoboCop/metamod-p",
+        "UpdateSourceTarget": "{{$FullBaseDir}}dod",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "UpdateSourceConditionSetting": "InstallMetamod",
+        "UpdateSourceConditionValue": "metamod-p Fork"
+    },
+    {
+        "UpdateStageName": "Metamod P Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "GithubRelease",
+        "UpdateSourceArgs": "Bots-United/metamod-p",
+        "UpdateSourceTarget": "{{$FullBaseDir}}dod",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "UpdateSourceConditionSetting": "InstallMetamod-P",
+        "UpdateSourceConditionValue": "metamod-p"
     },
     {
         "UpdateStageName": "Metamod Download Cleanup",
